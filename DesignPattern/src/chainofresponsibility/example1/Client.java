@@ -1,4 +1,4 @@
-package chainofresponsibility;
+package chainofresponsibility.example1;
 //客户端类
 public class Client {
 

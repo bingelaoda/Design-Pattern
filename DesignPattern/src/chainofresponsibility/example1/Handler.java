@@ -1,4 +1,4 @@
-package chainofresponsibility;
+package chainofresponsibility.example1;
 
 /**
  * 抽象处理者角色

@@ -1,4 +1,4 @@
-package chainofresponsibility;
+package chainofresponsibility.example1;
 /**
  * 具体处理者角色
  * @author wuxb

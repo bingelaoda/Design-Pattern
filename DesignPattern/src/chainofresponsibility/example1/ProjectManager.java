@@ -1,4 +1,4 @@
-package chainofresponsibility;
+package chainofresponsibility.example1;
 
 public class ProjectManager extends Handler {
 
