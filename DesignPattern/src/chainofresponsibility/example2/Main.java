@@ -16,6 +16,7 @@ public class Main {
 					.addFilter(new SensitiveFilter());
 		
 		msgProcessor.setfChain(filterChain1);
+
 		String str = msgProcessor.doProcess();
 		
 		System.out.println(str);

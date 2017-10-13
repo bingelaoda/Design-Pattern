@@ -17,7 +17,6 @@ public class MsgProcessor {
 
 	public String doProcess(){
 		return fChain.doFilter(msgString);
-		
 	}
 	
 	public String getMsgString() {
