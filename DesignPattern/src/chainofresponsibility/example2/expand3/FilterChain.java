@@ -12,12 +12,12 @@ public class FilterChain implements Filter {
 	}
 	
 	//这个地方如果第二个filterchain里面有多个filter的话会出现问题
+	//这种模式在使用非递归的编程实现递归形式非常常见
 	int index=0;
 	@Override
 	public void doFilter(Request request, Response response,FilterChain filterChain) {
 		if (index!=filters.size()) {
 			filters.get(index).doFilter(request, response,filterChain);
-			
 		}
 	}
 }
