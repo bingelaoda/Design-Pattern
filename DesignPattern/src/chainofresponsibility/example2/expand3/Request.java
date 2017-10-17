@@ -1,7 +1,7 @@
-package chainofresponsibility.example3;
+package chainofresponsibility.example2.expand3;
 
 public class Request {
-	String request;
+	private String request;
 
 	public String getRequest() {
 		return request;

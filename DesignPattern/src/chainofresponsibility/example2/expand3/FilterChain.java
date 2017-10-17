@@ -1,4 +1,4 @@
-package chainofresponsibility.example2;
+package chainofresponsibility.example2.expand3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,14 +11,11 @@ public class FilterChain implements Filter {
 		 
 		 return this;
 	}
-
+	int index=0;
 	@Override
-	public String doFilter(String r) {
-		for (Filter filter : filters) {
-			r=filter.doFilter(r);
+	public void doFilter(Request request, Response response,FilterChain filterChain) {
+		if (index!=filters.size()) {
+			filters.get(index).doFilter(request, response,filterChain);
 		}
-		
-		return r;
 	}
-	
 }

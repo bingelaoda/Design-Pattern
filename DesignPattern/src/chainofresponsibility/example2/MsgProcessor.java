@@ -3,20 +3,16 @@ package chainofresponsibility.example2;
 public class MsgProcessor {
 	
 	String msgString;
-//	Filter[] filters ={new HTMLFilter(),new SensitiveFilter()};
+	Filter[] filters ={new HTMLFilter(),new SensitiveFilter()};
 	
-	FilterChain fChain ;
-	
-	public FilterChain getfChain() {
-		return fChain;
-	}
-
-	public void setfChain(FilterChain fChain) {
-		this.fChain = fChain;
-	}
-
 	public String doProcess(){
-		return fChain.doFilter(msgString);
+		String rString = msgString;
+		for (Filter filter : filters) {
+			rString=filter.doFilter(rString);
+		}
+		
+		return rString;
+		
 	}
 	
 	public String getMsgString() {

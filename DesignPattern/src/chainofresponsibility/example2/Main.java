@@ -7,16 +7,7 @@ public class Main {
 		String msString = "习近平，敏感，<script>";
 		
 		MsgProcessor msgProcessor = new MsgProcessor();
-		
 		msgProcessor.setMsgString(msString);
-		
-		FilterChain filterChain1  = new FilterChain();
-		
-		filterChain1.addFilter(new HTMLFilter())
-					.addFilter(new SensitiveFilter());
-		
-		msgProcessor.setfChain(filterChain1);
-
 		String str = msgProcessor.doProcess();
 		
 		System.out.println(str);
