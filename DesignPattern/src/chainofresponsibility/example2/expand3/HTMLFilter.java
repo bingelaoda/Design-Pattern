@@ -4,10 +4,10 @@ public class HTMLFilter implements Filter{
 
 	@Override
 	public void doFilter(Request request, Response response,FilterChain filterChain) {
+		filterChain.index++;
 		String temp  = request.getRequest().replace("<", "[");
-		request.setRequest(temp);
-		System.out.println("HTMLrequest");
+		request.setRequest(temp+"HTMLrequest");
 		filterChain.doFilter(request, response, filterChain);
-		System.out.println("HTMLresponse");
+		response.setResponse(response.getResponse()+"HTMLresponse");
 	}
 }

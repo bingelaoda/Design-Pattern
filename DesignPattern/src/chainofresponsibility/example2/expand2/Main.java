@@ -13,7 +13,8 @@ public class Main {
 		filterChain.addFilter(new HTMLFilter())
 				   .addFilter(new SensitiveFilter());
 		FilterChain filterChain2 = new FilterChain();
-		filterChain2.addFilter(new FaceFilter());
+		filterChain2.addFilter(new FaceFilter())
+					.addFilter(new XiFilter());
 		
 		filterChain.addFilter(filterChain2);
 		
