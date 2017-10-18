@@ -1,35 +1,19 @@
 package chainofresponsibility.example1;
-
-/**
- * 抽象处理者角色
- * @author wuxb
- *
+/*
+ * 之所以用抽象类，而不用接口，是因为这个类里面除了除了方法
+ * 还有调用下一个处理者的引用
  */
-
 public abstract class Handler {
-	/*
-	 * 持有后继的责任对象
-	 */
+	//保存下一个继续处理者
 	protected Handler successor;
-	
-	/*
-	 * 示意处理请求的方法，虽然这个示意方法是没有传入参数的
-	 * 但实际是可以传入参数的，根据具体需要来决定是否传入参数
-	 */
-	public abstract String handleRequest(String user,double fee);
-	
-	
-	/*
-	 * 取值方法
-	 */
-	public Handler getSuccessor(){
+
+	public Handler getSuccessor() {
 		return successor;
 	}
-	
-	/*
-	 * 赋值方法，设置后继的责任对象
-	 */
-	public void setSuccessor(Handler successor){
+
+	public void setSuccessor(Handler successor) {
 		this.successor = successor;
 	}
+	//抽象的处理请求的方法
+	public abstract String handlerRequest(int fee);
 }

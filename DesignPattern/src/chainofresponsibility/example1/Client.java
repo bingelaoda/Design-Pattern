@@ -1,24 +1,17 @@
 package chainofresponsibility.example1;
-//客户端类
-public class Client {
 
+public class Client {
+	
 	public static void main(String[] args){
-//		//组装责任链
-//		Handler handler1 = new ConcreteHandler();
-//		Handler handler2 = new ConcreteHandler();
-//		handler1.setSuccessor(handler2);
-//		
-//		//提交请求
-//		handler1.handleRequest();
+		ProjectManager projectManager = new ProjectManager();
+		DepManager depManager = new DepManager();
+		GeneralManager generalManager = new GeneralManager();
 		
-		Handler h1 = new GeneralManager();
-		Handler h2 = new DeptManager();
-		Handler h3 = new ProjectManager();
+		projectManager.setSuccessor(depManager);
+		depManager.setSuccessor(generalManager);
 		
-		h3.setSuccessor(h2);
-		h2.setSuccessor(h1);
+		String str = projectManager.handlerRequest(500);
 		
-		String test1 = h3.handleRequest("张三", 1020);
-		System.out.println(test1);
+		System.out.println(str);
 	}
 }
