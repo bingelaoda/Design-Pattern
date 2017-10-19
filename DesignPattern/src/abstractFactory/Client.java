@@ -8,7 +8,7 @@ public class Client {
 		IProductB productB1 = factory1.getProductB1();
 		
 		productA1.method();
-		//nihao
+		//nihao nihao 
 		productB1.method();
 		
 		Factory2 factory2 = new ConcreteFactory2();
